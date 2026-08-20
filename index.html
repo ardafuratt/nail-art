@@ -1,37 +1,49 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ezgi Yiğit Nails — Düzce Protez Tırnak &amp; Nail Art</title>
+<title>Aurum Nail Atelier — Lüks Protez Tırnak &amp; Nail Art Stüdyosu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="brandmark">Ezgi Yiğit <span>Nails</span></div>
+  <!-- Top Navigation -->
+  <header class="top-nav" id="topNav">
+    <div class="top-nav-inner">
+      <a href="#" class="brandmark-nav">AURUM <span>Atelier</span></a>
+      <nav class="nav-links">
+        <a href="#stage">Keşfet</a>
+        <a href="#services">Hizmetler</a>
+        <a href="#standards">Standartlar</a>
+        <a href="#reviews">Yorumlar</a>
+        <a href="#faq">S.S.S.</a>
+        <a href="#booking" class="nav-btn-book">Randevu Al</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="rail"><div class="rail-fill" id="railFill"></div></div>
 
+  <!-- Scroll-Scrub Video Stage -->
   <section class="scrollstage" id="stage">
     <div class="pin">
       <canvas id="scrubCanvas"></canvas>
-      <div class="loader" id="loader">
-        <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
-      </div>
 
       <div class="vignette"></div>
       <div class="grain"></div>
       <div class="flood" id="flood"></div>
 
       <div class="intro-overlay" id="introOverlay">
-        <div class="eyebrow">DÜZCE • PROTEZ TIRNAK &amp; NAIL ART STÜDYOSU</div>
+        <div class="eyebrow">HAUTE COUTURE • PROTEZ TIRNAK &amp; NAIL ART</div>
         <h1 class="hero-name-heading">
-          <span class="hero-name-gradient">EZGİ YİĞİT</span>
-          <span class="hero-name-sub">Nails &amp; Atelier</span>
+          <span class="hero-name-gradient">AURUM</span>
+          <span class="hero-name-sub">Nail &amp; Design Atelier</span>
         </h1>
-        <p class="hero-tagline">Tırnaklarınızda <em>zarafet</em> ve sanat. Kişiye özel protez tırnak, jel güçlendirme ve özgün nail art tasarımları.</p>
+        <p class="hero-tagline">Tırnaklarınızda <em>zarafet</em>, estetik ve kusursuz el işçiliği. Kişiye özel haute couture tasarımlar ve medikal tırnak bakımı.</p>
         <div class="scrolldown"><div class="line"></div>Aşağı Kaydırın</div>
       </div>
 
@@ -48,32 +60,444 @@
       </div>
 
       <div class="reveal" id="reveal">
-        <div class="word">EZGİ YİĞİT</div>
-        <div class="tag">DÜZCE PROTEZ TIRNAK &amp; NAIL ART</div>
-        <a href="https://www.instagram.com/ezgiyigitnails" target="_blank" rel="noopener noreferrer" class="cta">Randevu &amp; Bilgi Al</a>
+        <div class="word">AURUM</div>
+        <div class="tag">HAUTE COUTURE NAIL ART &amp; ATELIER</div>
+        <a href="#booking" class="cta">Hemen Randevu Oluştur</a>
       </div>
     </div>
   </section>
 
+  <!-- Showcase Recap Section -->
   <section class="after">
     <div class="head">
       <h2>Kusursuz bir seansın üç adımı, tek bir ışıltıda buluşuyor.</h2>
-      <p>Özel tasarım, profesyonel protez uygulaması ve besleyici bakım — Ezgi Yiğit Nails'te her randevunun değişmeyen kalite standardı.</p>
+      <p>Özel tasarım, profesyonel protez uygulaması ve besleyici bakım — Aurum Atelier'de her randevunun değişmeyen kalite standardı.</p>
     </div>
     <div class="grid3">
-      <figure><img src="assets/ezgi_nail_design.jpg" alt="Ezgi Yiğit Nails Kişiye Özel Protez ve Tasarım"><figcaption>01 — Protez &amp; Tasarım</figcaption></figure>
-      <figure><img src="assets/ezgi_nail_gel.jpg" alt="Ezgi Yiğit Nails Jel Güçlendirme ve Kalıcı Oje"><figcaption>02 — Jel Güçlendirme</figcaption></figure>
-      <figure><img src="assets/ezgi_nail_care.jpg" alt="Ezgi Yiğit Nails Medikal Bakım ve Manikür"><figcaption>03 — Bakım &amp; Manikür</figcaption></figure>
-    </div>
-
-    <div class="ctaband">
-      <h3>Kendi tasarımınızı planlayın</h3>
-      <p>Düzce stüdyomuzda hayalinizdeki tırnak tasarımını oluşturmak ve randevunuzu ayırtmak için hemen iletişime geçin.</p>
-      <a href="https://www.instagram.com/ezgiyigitnails" target="_blank" rel="noopener noreferrer">Instagram'dan Randevu Al</a>
+      <figure><img src="assets/aurum_nail_design.jpg" alt="Aurum Nail Atelier Kişiye Özel Protez ve Tasarım" loading="lazy"><figcaption>01 — Protez &amp; Tasarım</figcaption></figure>
+      <figure><img src="assets/aurum_nail_gel.jpg" alt="Aurum Nail Atelier Jel Güçlendirme ve Kalıcı Oje" loading="lazy"><figcaption>02 — Jel Güçlendirme</figcaption></figure>
+      <figure><img src="assets/aurum_nail_care.jpg" alt="Aurum Nail Atelier Medikal Bakım ve Spa Manikür" loading="lazy"><figcaption>03 — Bakım &amp; Manikür</figcaption></figure>
     </div>
   </section>
 
-  <footer>© Ezgi Yiğit Nails (@ezgiyigitnails) — Düzce Protez Tırnak &amp; Nail Art Stüdyosu</footer>
+  <!-- Services & Pricing Menu -->
+  <section class="services-sec" id="services">
+    <div class="section-container">
+      <div class="sec-header">
+        <span class="sec-badge">MENÜ &amp; DENEYİM</span>
+        <h2>Atelier Hizmetleri &amp; Fiyat Listesi</h2>
+        <p>En yüksek kalite Avrupa standartlarında malzemeler ve uzman artist dokunuşlarıyla hazırlanan bakım ve tasarım menümüz.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-tag">İmza Hizmet</span>
+            <span class="service-price">1.400 ₺</span>
+          </div>
+          <h3>Haute Couture Protez Tırnak</h3>
+          <p>Özel form ve tips tekniğiyle kişiselleştirilmiş uzunluk ve form oluşturma. Kırılmayan, doğal görünümlü jel mimarisi.</p>
+          <div class="service-meta">
+            <span>⏱ ~120 Dakika</span>
+            <span>✦ 4 Hafta Kalıcılık</span>
+          </div>
+          <button type="button" class="btn-select-srv" onclick="selectService('Haute Couture Protez Tırnak')">Bu Hizmeti Seç →</button>
+        </div>
+
+        <div class="service-card featured">
+          <div class="service-top">
+            <span class="service-tag popular">En Çok Tercih Edilen</span>
+            <span class="service-price">950 ₺</span>
+          </div>
+          <h3>Jel Güçlendirme &amp; Kalıcı Oje</h3>
+          <p>Doğal tırnak plağını soymadan, kırılgan tırnakları güçlendirip 30 güne kadar ayna parlaklığında kalıcı renk sunumu.</p>
+          <div class="service-meta">
+            <span>⏱ ~90 Dakika</span>
+            <span>✦ HEMA-Free Jel</span>
+          </div>
+          <button type="button" class="btn-select-srv" onclick="selectService('Jel Güçlendirme &amp; Kalıcı Oje')">Bu Hizmeti Seç →</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-tag">Sanatsal</span>
+            <span class="service-price">450 ₺'den</span>
+          </div>
+          <h3>Artisan Nail Art &amp; Chrome Tasarım</h3>
+          <p>Mikro fırça el çizimleri, 3D taş ve inciler, krom yansımalar ve mevsime özel koleksiyon illüstrasyonları.</p>
+          <div class="service-meta">
+            <span>⏱ ~45-60 Dakika</span>
+            <span>✦ Sınırsız Renk &amp; Efekt</span>
+          </div>
+          <button type="button" class="btn-select-srv" onclick="selectService('Artisan Nail Art &amp; Chrome')">Bu Hizmeti Seç →</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-tag">Bakım Ritüeli</span>
+            <span class="service-price">650 ₺</span>
+          </div>
+          <h3>Lüks Spa Manikür &amp; Kolajen Bakımı</h3>
+          <p>Kuru/kombine manikür, organik şeker peelingi, sıcak havlu kompresi ve yoğun kolajen el maskesi terapisi.</p>
+          <div class="service-meta">
+            <span>⏱ ~50 Dakika</span>
+            <span>✦ Derin Nem &amp; Yenilenme</span>
+          </div>
+          <button type="button" class="btn-select-srv" onclick="selectService('Lüks Spa Manikür &amp; Bakım')">Bu Hizmeti Seç →</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-top">
+            <span class="service-tag">Periyodik</span>
+            <span class="service-price">900 ₺</span>
+          </div>
+          <h3>Protez Bakımı &amp; Dolgu (Refill)</h3>
+          <p>Uzayan protez tırnakların dipten yenilenmesi, form ve apeks dengesinin yeniden oluşturulması ve taze kalıcı oje.</p>
+          <div class="service-meta">
+            <span>⏱ ~90 Dakika</span>
+            <span>✦ Form Yenileme</span>
+          </div>
+          <button type="button" class="btn-select-srv" onclick="selectService('Protez Bakımı &amp; Dolgu')">Bu Hizmeti Seç →</button>
+        </div>
+
+        <div class="service-card vip-card">
+          <div class="service-top">
+            <span class="service-tag vip">VIP Deneyim</span>
+            <span class="service-price">2.800 ₺</span>
+          </div>
+          <h3>Gelin &amp; Özel Davet VIP Paketi</h3>
+          <p>Gelinlik veya konseptinize özel protez tırnak, el-ayak kombine spa bakımı, özel taş tasarımı ve ikramlar.</p>
+          <div class="service-meta">
+            <span>⏱ ~180 Dakika</span>
+            <span>✦ Birebir Özel Seans</span>
+          </div>
+          <button type="button" class="btn-select-srv" onclick="selectService('Gelin &amp; VIP Özel Seans')">Bu Hizmeti Seç →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hygiene & Quality Standards -->
+  <section class="standards-sec" id="standards">
+    <div class="section-container">
+      <div class="sec-header">
+        <span class="sec-badge">GÜVEN &amp; HİJYEN</span>
+        <h2>Tavizsiz Hijyen &amp; Kalite Standartları</h2>
+        <p>Sağlığınız ve tırnak bütünlüğünüz bizim için birinci önceliktir. Atelier'mizde cerrahi hassasiyette hijyen uygulanır.</p>
+      </div>
+
+      <div class="standards-grid">
+        <div class="standard-box">
+          <div class="std-icon">✦</div>
+          <h4>Tıbbi Otoklav Sterilizasyonu</h4>
+          <p>Tüm metal aletler her seans öncesinde ultrasonik banyodan geçirilip hastane standartlarında otoklav ile sterilize edilir ve gözünüzün önünde açılır.</p>
+        </div>
+        <div class="standard-box">
+          <div class="std-icon">✧</div>
+          <h4>Kişiye Özel Tek Kullanımlık Set</h4>
+          <p>Törpü, buffer, portakal çubuğu ve kütikül iticiler yalnızca size özel tek kullanımlık steril paketlerde kullanılır ve seans sonunda imha edilir.</p>
+        </div>
+        <div class="standard-box">
+          <div class="std-icon">◈</div>
+          <h4>HEMA-Free &amp; Vegan Ürünler</h4>
+          <p>Alerjen madde içermeyen, tırnak yatağını sarartmayan ve inceltmeyen premium sertifikalı Avrupa jel markaları kullanılır.</p>
+        </div>
+        <div class="standard-box">
+          <div class="std-icon">⚖</div>
+          <h4>Kişiye Özel Anatomi Analizi</h4>
+          <p>Tırnak yapınıza, parmak uzunluğunuza ve yaşam tarzınıza en uygun tırnak formu (Badem, Balerin, Kare, Oval) uzmanımızca analiz edilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Online Booking System -->
+  <section class="booking-sec" id="booking">
+    <div class="section-container">
+      <div class="booking-wrapper">
+        <div class="booking-info">
+          <span class="sec-badge">ONLINE REZERVASYON</span>
+          <h2>Atelier Seansınızı Planlayın</h2>
+          <p>Sıra beklemeden, dilediğiniz gün ve saatte yerinizi ayırtın. Seçtiğiniz hizmet ve uzman için anında onay alın.</p>
+
+          <div class="booking-features">
+            <div class="bf-item">
+              <span class="bf-check">✓</span>
+              <div>
+                <strong>Anında Teyit &amp; Takip</strong>
+                <span>Rezervasyon bilgileriniz ve randevu kodunuz anında oluşturulur.</span>
+              </div>
+            </div>
+            <div class="bf-item">
+              <span class="bf-check">✓</span>
+              <div>
+                <strong>Esnek Değişiklik</strong>
+                <span>Randevu saatine 24 saat kalana kadar ücretsiz saat değişimi.</span>
+              </div>
+            </div>
+            <div class="bf-item">
+              <span class="bf-check">✓</span>
+              <div>
+                <strong>Birebir VIP Hizmet</strong>
+                <span>Her seansta yalnızca bir misafirimize odaklanan sessiz &amp; konforlu ortam.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="direct-contact-card">
+            <h4>Hızlı İletişim &amp; Destek</h4>
+            <p>Özel tasarım veya acil randevu talepleri için bize doğrudan ulaşabilirsiniz:</p>
+            <div class="contact-methods">
+              <a href="tel:+905550000000" class="btn-phone">📞 0 (555) 000 00 00</a>
+              <a href="https://wa.me/905550000000?text=Merhaba,%20Aurum%20Nail%20Atelier%20randevusu%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-wa">💬 WhatsApp Hattı</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <div class="card-header">
+            <h3>Randevu Formu</h3>
+            <span class="steps-count">Online Rezervasyon</span>
+          </div>
+
+          <form id="bookingForm" onsubmit="event.preventDefault(); submitBooking();">
+            <div class="form-group">
+              <label for="bookingService">İstediğiniz Hizmet *</label>
+              <select id="bookingService" required>
+                <option value="" disabled selected>Hizmet Seçiniz...</option>
+                <option value="Haute Couture Protez Tırnak">Haute Couture Protez Tırnak (1.400 ₺)</option>
+                <option value="Jel Güçlendirme &amp; Kalıcı Oje">Jel Güçlendirme &amp; Kalıcı Oje (950 ₺)</option>
+                <option value="Artisan Nail Art &amp; Chrome">Artisan Nail Art &amp; Chrome (450 ₺'den)</option>
+                <option value="Lüks Spa Manikür &amp; Bakım">Lüks Spa Manikür &amp; Bakım (650 ₺)</option>
+                <option value="Protez Bakımı &amp; Dolgu">Protez Bakımı &amp; Dolgu (900 ₺)</option>
+                <option value="Gelin &amp; VIP Özel Seans">Gelin &amp; VIP Özel Seans (2.800 ₺)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bookingArtist">Uzman / Sanatçı Tercihi</label>
+              <select id="bookingArtist">
+                <option value="Farketmez (En Uygun Uzman)">Farketmez (En Erken Uygun Uzman)</option>
+                <option value="Master Nail Artist">Master Nail Artist</option>
+                <option value="Senior Gel &amp; Care Specialist">Senior Gel &amp; Care Specialist</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookingDate">Tarih Seçiniz *</label>
+                <input type="date" id="bookingDate" required>
+              </div>
+
+              <div class="form-group">
+                <label for="bookingTime">Saat Seçiniz *</label>
+                <select id="bookingTime" required>
+                  <option value="" disabled selected>Saat Seçin</option>
+                  <option value="10:00">10:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:30">19:30</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="clientName">Adınız Soyadınız *</label>
+              <input type="text" id="clientName" placeholder="Örn: Selin Karaca" required>
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhone">Telefon Numaranız *</label>
+              <input type="tel" id="clientPhone" placeholder="0 (5XX) XXX XX XX" required>
+            </div>
+
+            <div class="form-group">
+              <label for="clientNotes">Özel İstek / Tasarım Notu</label>
+              <textarea id="clientNotes" rows="2" placeholder="Tırnak boyutu tercihi, mevcut protez çıkarma işlemi vb."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit-booking">
+              <span>Randevuyu Onayla &amp; Oluştur</span>
+              <span class="btn-arrow">→</span>
+            </button>
+            <p class="form-privacy">🔒 Bilgileriniz yalnızca randevu teyidi için kullanılır.</p>
+          </form>
+
+          <!-- Success Confirmation Modal/Box -->
+          <div class="booking-success" id="bookingSuccess" style="display:none;">
+            <div class="success-badge">✓</div>
+            <h3>Randevunuz Onaylandı!</h3>
+            <p class="success-desc">Aurum Atelier'de yeriniz ayrıldı. Rezervasyon detaylarınız aşağıdadır:</p>
+            <div class="booking-summary-box">
+              <div class="sum-item"><span>Referans Kodu:</span> <strong id="sumCode">AUR-8492</strong></div>
+              <div class="sum-item"><span>Misafir:</span> <strong id="sumName">-</strong></div>
+              <div class="sum-item"><span>Hizmet:</span> <strong id="sumService">-</strong></div>
+              <div class="sum-item"><span>Tarih &amp; Saat:</span> <strong id="sumDateTime">-</strong></div>
+            </div>
+            <button type="button" class="btn-new-booking" onclick="resetBookingForm()">Yeni Randevu Oluştur</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guest Testimonials -->
+  <section class="reviews-sec" id="reviews">
+    <div class="section-container">
+      <div class="sec-header">
+        <span class="sec-badge">DENEYİMLER</span>
+        <h2>Misafirlerimizin Gözünden Aurum</h2>
+        <p>Her detayda konfor ve kusursuz işçilik arayanların tercihi.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Tırnaklarım çok ince ve kırılgandı, jel güçlendirme sonrası 4 hafta boyunca tek bir soyulma bile yaşamadım. Titizlik ve hijyen seviyesi inanılmaz."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">D.K.</div>
+            <div>
+              <h5>Derya K.</h5>
+              <span>Jel Güçlendirme Misafiri</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Düğünüm için protez tırnak ve nail art yaptırdım. Tam hayal ettiğim zarif altın detayları uyguladılar. Fotoğraflarda harika görünüyordu!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">B.A.</div>
+            <div>
+              <h5>Büşra A.</h5>
+              <span>VIP Gelin Paketi Misafiri</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Sterilizasyon poşetinin gözümün önünde açılması ve tek kullanımlık törpüler büyük güven verdi. Sanatsal çizimleri ise şehirdeki en iyisi."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">E.T.</div>
+            <div>
+              <h5>Ece T.</h5>
+              <span>Artisan Nail Art Misafiri</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="faq-sec" id="faq">
+    <div class="section-container">
+      <div class="sec-header">
+        <span class="sec-badge">MERAK EDİLENLER</span>
+        <h2>Sıkça Sorulan Sorular</h2>
+        <p>Uygulamalarımız ve seans süreci hakkında en çok merak edilen detaylar.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Protez tırnak ve jel güçlendirme ne kadar süre kalıcıdır?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Doğal tırnak uzama hızına bağlı olarak uygulamalarımız 3 ila 5 hafta boyunca kusursuz parlaklık ve dayanıklılıkla kalır. Tırnak sağlığınız için 3-4 haftada bir dolgu ve bakım önerilmektedir.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Uygulamalar kendi doğal tırnağıma zarar verir mi?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Hayır. Zarar veren şey jel veya protez değil, hatalı törpüleme ve koparma işlemleridir. Kullandığımız HEMA-Free Avrupa jel ürünleri ve nazik çıkarma teknikleri tırnak plağınızı korur.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>İstediğim özel bir nail art tasarımını getirebilir miyim?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Kesinlikle! Beğendiğiniz herhangi bir referans fotoğrafı veya hayalinizdeki deseni sanatçılarımıza gösterebilirsiniz; el anatominize ve renk tonunuza göre birebir uyarlanır.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Randevumu iptal edebilir veya saatini değiştirebilir miyim?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Randevu saatinize en geç 24 saat kala telefon veya WhatsApp üzerinden bize bildirerek ücretsiz olarak tarih ve saat değişikliği yapabilirsiniz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Studio & Hours Section -->
+  <section class="studio-info-sec">
+    <div class="section-container">
+      <div class="studio-info-grid">
+        <div class="studio-box">
+          <span class="box-icon">📍</span>
+          <h4>Stüdyo Adresi</h4>
+          <p>Kültür Mah. Atatürk Bulvarı No: 48/A<br>Merkez / Düzce</p>
+        </div>
+        <div class="studio-box">
+          <span class="box-icon">⏰</span>
+          <h4>Çalışma Saatleri</h4>
+          <p>Pazartesi – Cumartesi: 09:30 – 20:00<br>Pazar: Kapalı (Özel Randevular Hariç)</p>
+        </div>
+        <div class="studio-box">
+          <span class="box-icon">☎</span>
+          <h4>Rezervasyon &amp; Bilgi</h4>
+          <p>Tel: +90 (555) 000 00 00<br>E-Posta: info@aurumnailatelier.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Luxury Footer -->
+  <footer class="luxury-footer">
+    <div class="section-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>AURUM <span>Atelier</span></h3>
+          <p>Estetik, zarafet ve yüksek kalite standartlarında kişiye özel tırnak tasarım ve bakım stüdyosu.</p>
+        </div>
+        <div class="footer-nav">
+          <h5>Hızlı Bağlantılar</h5>
+          <ul>
+            <li><a href="#stage">Ana Sayfa</a></li>
+            <li><a href="#services">Hizmet Menüsü</a></li>
+            <li><a href="#standards">Hijyen Standartları</a></li>
+            <li><a href="#faq">Sıkça Sorulan Sorular</a></li>
+            <li><a href="#booking">Online Randevu</a></li>
+          </ul>
+        </div>
+        <div class="footer-cta">
+          <h5>Güzelliğinizi Taçlandırın</h5>
+          <p>Kendinize özel bir bakım saati ayırmak için hemen yerinizi ayırtın.</p>
+          <a href="#booking" class="footer-btn-book">Randevu Oluştur</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Aurum Nail Atelier. Tüm Hakları Saklıdır.</p>
+        <p class="footer-sub">Haute Couture Nail Art &amp; Prosthetic Nail Design</p>
+      </div>
+    </div>
+  </footer>
 
 <script src="script.js"></script>
 </body>
