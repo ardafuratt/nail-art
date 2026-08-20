@@ -19,11 +19,15 @@
   var frames = new Array(FRAME_COUNT);
   var currentDrawnIndex = -1;
 
+  // Smooth lerp physics state for 60-120 FPS video scrubbing
+  var targetProgress = 0;
+  var currentProgress = 0;
+
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
   function remap(v, a, b) { return clamp((v - a) / (b - a), 0, 1); }
   function easeInQuad(t) { return t * t; }
 
-  // Canvas sizing optimized for speed (cap max DPR at 1 for butter-smooth 60-120fps)
+  // Canvas sizing (crisp & ultra-fast)
   function sizeCanvas() {
     if (!canvas || !canvas.parentElement) return;
     var rect = canvas.parentElement.getBoundingClientRect();
@@ -34,12 +38,11 @@
     drawFrame(currentDrawnIndex >= 0 ? currentDrawnIndex : 0, true);
   }
 
-  // Draw frame with nearest loaded fallback
+  // Draw frame with pre-decoded GPU bitmap
   function drawFrame(index, force) {
     if (index < 0) return;
     var targetIdx = clamp(index, 0, FRAME_COUNT - 1);
-    
-    // Find closest loaded frame if requested frame is still decoding
+
     var img = frames[targetIdx];
     if (!img) {
       for (var offset = 1; offset < FRAME_COUNT; offset++) {
@@ -80,45 +83,51 @@
     ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
   }
 
-  // Fast Instant & Background Progressive Loading
+  // Pre-decode WebP images off the main thread using decode() / createImageBitmap
+  function loadSingleFrame(idx, callback) {
+    var img = new Image();
+    img.src = FRAME_PATH(idx);
+    if ('decode' in img) {
+      img.decode().then(function () {
+        frames[idx - 1] = img;
+        if (callback) callback(img);
+      }).catch(function () {
+        frames[idx - 1] = img;
+        if (callback) callback(img);
+      });
+    } else {
+      img.onload = function () {
+        frames[idx - 1] = img;
+        if (callback) callback(img);
+      };
+    }
+  }
+
   function loadFramesProgressively() {
-    // Step 1: Load 1st frame IMMEDIATELY (0ms)
-    var img1 = new Image();
-    img1.onload = function () {
-      frames[0] = img1;
+    // 1st Frame loaded instantly
+    loadSingleFrame(1, function () {
       sizeCanvas();
       drawFrame(0, true);
-    };
-    img1.src = FRAME_PATH(1);
+    });
 
-    // Step 2: Load keyframes (every 5th frame) for rapid scroll responsiveness
-    var loadQueue = [];
-    for (var k = 5; k <= FRAME_COUNT; k += 5) {
-      loadQueue.push(k);
-    }
-    // Then fill remaining frames
+    // Load keyframes first (every 3rd frame for rapid coverage)
+    var queue = [];
+    for (var k = 2; k <= FRAME_COUNT; k += 3) queue.push(k);
     for (var j = 2; j <= FRAME_COUNT; j++) {
-      if (j % 5 !== 0) loadQueue.push(j);
+      if (j % 3 !== 0) queue.push(j);
     }
 
-    // Load queue in small async batches
-    var queueIndex = 0;
-    function loadNextBatch() {
-      if (queueIndex >= loadQueue.length) return;
-      var batchSize = 6;
-      for (var b = 0; b < batchSize && queueIndex < loadQueue.length; b++, queueIndex++) {
-        (function (idx) {
-          var img = new Image();
-          img.onload = function () {
-            frames[idx - 1] = img;
-          };
-          img.src = FRAME_PATH(idx);
-        })(loadQueue[queueIndex]);
+    var qIdx = 0;
+    function processQueue() {
+      if (qIdx >= queue.length) return;
+      var batch = 4;
+      for (var b = 0; b < batch && qIdx < queue.length; b++, qIdx++) {
+        loadSingleFrame(queue[qIdx]);
       }
-      setTimeout(loadNextBatch, 30);
+      setTimeout(processQueue, 20);
     }
 
-    setTimeout(loadNextBatch, 50);
+    setTimeout(processQueue, 40);
   }
 
   function fadeStyle(el, t0, t1, p, dir) {
@@ -144,8 +153,30 @@
     return total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
   }
 
-  function frame() {
-    var p = computeProgress();
+  function updateScrollState() {
+    targetProgress = computeProgress();
+
+    if (topNav) {
+      if (window.scrollY > 60) {
+        topNav.classList.add('scrolled');
+      } else {
+        topNav.classList.remove('scrolled');
+      }
+    }
+  }
+
+  // 60-120 FPS Smooth Motion Render Loop
+  function loop() {
+    // Smooth lerp interpolation physics (gives liquid smooth video feel)
+    var diff = targetProgress - currentProgress;
+    if (Math.abs(diff) > 0.0001) {
+      currentProgress += diff * 0.16; // Lerp factor for ultra-smooth fluid response
+    } else {
+      currentProgress = targetProgress;
+    }
+
+    var p = currentProgress;
+
     if (railFill) railFill.style.height = (p * 100) + '%';
 
     fadeStyle(introOverlay, 0, 0.08, p, 'out');
@@ -167,30 +198,13 @@
     capStyle(cap1, 0.10, 0.44, p);
     capStyle(cap2, 0.46, 0.78, p);
 
-    if (topNav) {
-      if (window.scrollY > 60) {
-        topNav.classList.add('scrolled');
-      } else {
-        topNav.classList.remove('scrolled');
-      }
-    }
+    requestAnimationFrame(loop);
   }
 
-  var ticking = false;
-  function onScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        frame();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function () { sizeCanvas(); onScroll(); });
+  window.addEventListener('scroll', updateScrollState, { passive: true });
+  window.addEventListener('resize', function () { sizeCanvas(); updateScrollState(); });
   window.addEventListener('orientationchange', function () {
-    setTimeout(function () { sizeCanvas(); onScroll(); }, 100);
+    setTimeout(function () { sizeCanvas(); updateScrollState(); }, 100);
   });
 
   var bookingDateInput = document.getElementById('bookingDate');
@@ -199,7 +213,9 @@
     bookingDateInput.setAttribute('min', today);
   }
 
+  updateScrollState();
   loadFramesProgressively();
+  requestAnimationFrame(loop);
 })();
 
 // Global functions for booking & FAQ
